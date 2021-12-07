@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  font-size: 18px;
+}
+
+header img {
+  transform: translateY(-50%);
+  height: 20px;
+}
+
+main .clock {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.row {
+  flex-direction: column;
+}
+
+.clock .hour,
+.clock .minute {
+  font-family: "Orbitron", sans-serif;
+}
+
+.clock .shift {
+  font-size: 1rem;
+}
+
+.time {
+  display: flex;
+  gap: 5px;
+}
+
+.time {
+  font-size: 2rem;
+}
+
+/* .alarm .time .hour,
+.alarm .time .minute {
+  font-size: 32px;
+} */
+
+.alarm .time .shift {
+  font-size: 0.625rem;
+}
+
+.alarmDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* flex: 2;
+  padding: 10px; */
+}
+
+.almBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lightTxt {
+  color: gray;
+}
+
+.onOff {
+  --width: 50px;
+  --height: calc(var(--width) / 2);
+  --border-radius: 20px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggle {
+  display: none;
+}
+
+.onOff__fill {
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: rgb(104, 105, 105);
+  transition: background 0.2s ease-in;
+}
+
+.toggle:checked ~ .onOff__fill {
+  background: #0475c0;
+}
+
+.onOff__fill::after {
+  --circleHeight: calc(var(--height) - 5px);
+  content: "";
+  height: var(--circleHeight);
+  width: var(--circleHeight);
+  top: 2px;
+  /* transform: translateY(-50%); */
+  left: 2px;
+  background: #fff;
+  position: absolute;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.toggle:checked ~ .onOff__fill::after {
+  transform: translateX(var(--height));
+}
