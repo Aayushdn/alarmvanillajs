@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 * {
   margin: 0;
@@ -6,10 +6,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bgColor: #121212;
+}
+
 body {
-  background-color: #121212;
+  background-color: var(--bgColor);
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -28,7 +32,13 @@ header img {
 main .clock {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 5rem;
+  padding: 30px;
+  position: sticky;
+  top: 0;
+  background-color: var(--bgColor);
+  z-index: 2;
 }
 
 .row {
@@ -37,7 +47,7 @@ main .clock {
 
 .clock .hour,
 .clock .minute {
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .clock .shift {
@@ -80,6 +90,7 @@ main .clock {
   color: gray;
 }
 
+/* checkbox */
 .onOff {
   --width: 50px;
   --height: calc(var(--width) / 2);
@@ -107,11 +118,10 @@ main .clock {
 
 .onOff__fill::after {
   --circleHeight: calc(var(--height) - 5px);
-  content: "";
+  content: '';
   height: var(--circleHeight);
   width: var(--circleHeight);
   top: 2px;
-  /* transform: translateY(-50%); */
   left: 2px;
   background: #fff;
   position: absolute;
@@ -121,4 +131,19 @@ main .clock {
 
 .toggle:checked ~ .onOff__fill::after {
   transform: translateX(var(--height));
+}
+
+.addAlarm {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0475c0;
 }
